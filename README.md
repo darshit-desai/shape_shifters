@@ -11,7 +11,7 @@ The project demonstrates a swarm control algorithm on a group of turtlebot robot
 3. ![Shivam Sehgal](https://github.com/shivamsehgal77)
 
 
-# Build and Run Instructions
+## Build and Run Instructions
 ```bash
 # Source to ROS2 HUMBLE
 source /opt/ros/humble/setup.bash
@@ -34,11 +34,11 @@ colcon build --packages-select ShapeShifters --symlink-install --cmake-args -DCM
 . install/setup.bash
 ```
 
-# AIP and Product Backlog
+## AIP and Product Backlog
 1. Work Log and Sprint Log are at ![Link](https://docs.google.com/spreadsheets/d/1ph1sYep433EigfkVelYI8igBHbYIN74LMEw9CF0V7-I/edit#gid=2119248820)
 2. Final Proposal Report ![Link](https://docs.google.com/document/d/1y6ZIHWb2QU3o7JkHODOUfTqYlNkz0YVxSIHP77x4x8U/edit?usp=sharing)
 
-### CppCheck & CppLint
+## CppCheck & CppLint
 ```bash
 # Use the below command for cpp check by moving to root directory of your workspace
 cppcheck --enable=all --std=c++17 --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^(./build/|./install/|./log/)" ) --check-config  &> Results/cppcheck.txt

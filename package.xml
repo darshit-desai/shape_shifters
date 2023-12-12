@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ShapeShifters</name>
+  <name>shape_shifters</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="112571645+shivamsehgal77@users.noreply.github.com">shivam</maintainer>
-  <license>TODO: License declaration</license>
+  <description>A package for Swarm Robot control of Turtlebots</description>
+  <maintainer email="ssehgal7@umd.edu">shivam</maintainer>
+  <maintainer email="darshit@umd.edu">darshit</maintainer>
+  <maintainer email="ppord@umd.edu">patrik</maintainer>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
