@@ -1,0 +1,17 @@
+build/
+install/
+log/
+docs/
+# VS Code files
+.VC.db
+
+# OS X files
+.DS_Store
+# Python
+*.pyc
+
+*.json
+
+# clangd
+.clangd/
+.cache/
