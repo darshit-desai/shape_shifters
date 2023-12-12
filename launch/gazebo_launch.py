@@ -16,27 +16,11 @@ def generate_launch_description():
 
     return LaunchDescription([
 
-        DeclareLaunchArgument(
-            'record',
-            default_value='False'
-        ),
-
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 os.path.join(get_package_share_directory(
                     'turtlebot3_gazebo'), 'launch'), '/empty_world.launch.py'
             ])
-        ),
-
-        Node(
-            package='shape_shifters',
-            executable='shape_shifters',
-        ),
-
-        ExecuteProcess(
-            condition=IfCondition(record),
-            cmd=['ros2', 'bag', 'record', '-a', '-x /camera.+'],
-            shell=True
         )
 
     ])
