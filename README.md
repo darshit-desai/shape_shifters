@@ -14,11 +14,11 @@ The project demonstrates a swarm control algorithm on a group of turtlebot robot
 ### Results
 * UML Class Diagrams and Activity diagrams
     * Class diagram: 
-    ![](screenshots/Phase#1_Results/UMLClassdiagram.png)
+    ![](screenshots/Phase1_Results/UMLClassdiagram.png)
     * Activity diagram: 
-    ![](screenshots/Phase#1_Results/UML_activity.png)
+    ![](screenshots/Phase1_Results/UML_activity.png)
     * Launch File run example: 
-    ![](screenshots/Phase#1_Results/launchfile_ex.png)
+    ![](screenshots/Phase1_Results/launchfile_ex.png)
 
 
 ## Personnel
