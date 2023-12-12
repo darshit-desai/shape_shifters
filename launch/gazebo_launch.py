@@ -29,8 +29,8 @@ def generate_launch_description():
         ),
 
         Node(
-            package='ShapeShifters',
-            executable='ShapeShifters',
+            package='shape_shifters',
+            executable='shape_shifters',
         ),
 
         ExecuteProcess(
