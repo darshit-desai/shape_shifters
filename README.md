@@ -5,6 +5,22 @@
 ## Description
 The project demonstrates a swarm control algorithm on a group of turtlebot robots. The turtlebot swarm executes a shape formation of different shapes when seen from the top view autonomously based on user input. The swarm will follow a leader follower configuration.
 
+## Phase-1 Progress:
+1. Design inital UML class and activity diagrams
+2. Setup code coverage in codecov
+3. Add launch files for launching a single turtlebot in empty world
+4. Add template integration and unit tests
+
+### Results
+* UML Class Diagrams and Activity diagrams
+    * Class diagram: 
+    ![](screenshots/Phase#1_Results/UMLClassdiagram.png)
+    * Activity diagram: 
+    ![](screenshots/Phase#1_Results/UML_activity.png)
+    * Launch File run example: 
+    ![](screenshots/Phase#1_Results/launchfile_ex.png)
+
+
 ## Personnel
 1. ![Darshit Desai](https://github.com/darshit-desai)
 2. ![Patrik Pordi](https://github.com/patrikpordi)
@@ -32,6 +48,8 @@ rosdep install -i --from-path src --rosdistro humble -y
 colcon build --packages-select ShapeShifters --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --parallel-workers $(nproc)
 # After successfull build source the package
 . install/setup.bash
+# ROS2 launch file run
+export TURTLEBOT3_MODEL=burger && ros2 launch shape_shifters gazebo_launch.py 
 ```
 
 ## AIP and Product Backlog
@@ -41,9 +59,20 @@ colcon build --packages-select ShapeShifters --symlink-install --cmake-args -DCM
 ## CppCheck & CppLint
 ```bash
 # Use the below command for cpp check by moving to root directory of your workspace
-cppcheck --enable=all --std=c++17 --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^(./build/|./install/|./log/)" ) --check-config  &> Results/cppcheck.txt
+cppcheck --enable=all --std=c++17 --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^(./build/|./install/|./log/)" ) --check-config  &> cppcheck.txt
 
 # Use the below command for cpp lint by moving to root directory of your workspace 
-cpplint  --filter=-build/c++11,+build/c++17,-build/namespaces,-build/include_order $( find . -name *.cpp | grep -vE -e "^(./build/|./install/|./log/)" ) &> Results/cpplint.txt 
+cpplint  --filter=-build/c++11,+build/c++17,-build/namespaces,-build/include_order $( find . -name *.cpp | grep -vE -e "^(./build/|./install/|./log/)" ) &> cpplint.txt 
 ```
 
+## Test run instructions
+```bash
+colcon test --packages-select shape_shifters # Command to run the test
+cat log/latest_test/shape_shifters/stdout_stderr.log # Command to view the test result
+```
+
+## Docs generation
+```bash
+sudo apt install -y doxygen lcov gcovr pandoc
+colcon build --event-handlers console_cohesion+ --packages-select shape_shifters --cmake-target "docs"
+```
