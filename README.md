@@ -61,6 +61,7 @@ export TURTLEBOT3_MODEL=burger && ros2 launch shape_shifters gazebo_launch.py
 ## AIP and Product Backlog
 1. Work Log and Sprint Log are at [Link](https://docs.google.com/spreadsheets/d/1ph1sYep433EigfkVelYI8igBHbYIN74LMEw9CF0V7-I/edit?usp=sharing)
 2. Final Proposal Report [Link](https://docs.google.com/document/d/1y6ZIHWb2QU3o7JkHODOUfTqYlNkz0YVxSIHP77x4x8U/edit?usp=sharing)
+3. Video for Phase 1 [Link](https://drive.google.com/file/d/1UDKtr_CeyR_4nH1GlqVb55ZY5pjcLDt4/view?usp=sharing)
 
 ## CppCheck & CppLint
 ```bash
