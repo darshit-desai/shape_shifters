@@ -38,7 +38,7 @@ def generate_launch_description():
             output='screen',
             arguments=[
                 '-entity', f'turtlebot{i}',
-                '-file', f'/opt/ros/humble/share/turtlebot3_gazebo/models/turtlebot3_burger/model.sdfgit ,
+                '-file', f'/opt/ros/humble/share/turtlebot3_gazebo/models/turtlebot3_burger/model.sdf',
                 '-x', str(i * spacing_x),  # Adjust the x pose
                 '-y', '0.0',  # Adjust the y pose
                 '-z', '0.01'
