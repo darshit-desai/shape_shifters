@@ -7,6 +7,7 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+import numpy as np
 
 def generate_launch_description():
     # Your TurtleBot model (e.g., 'burger' or 'waffle')
@@ -30,6 +31,8 @@ def generate_launch_description():
         ])
     )
 
+    x_rand = np.random.uniform(-10, 10, num_turtlebots)
+    y_rand = np.random.uniform(-10, 10, num_turtlebots)
     # Create nodes to spawn multiple TurtleBots
     spawn_turtlebots = [
         Node(
@@ -40,11 +43,11 @@ def generate_launch_description():
                 '-entity', f'turtlebot{i}',
                 "-robot_namespace", f"tb{i}",
                 '-file', f'/opt/ros/humble/share/turtlebot3_gazebo/models/turtlebot3_burger/model.sdf',
-                '-x', str(i * spacing_x),  # Adjust the x pose
-                '-y', '0.0',  # Adjust the y pose
+                '-x', str(x_rand[i]),  # Adjust the x pose
+                '-y', str(y_rand[i]),  # Adjust the y pose
                 '-z', '0.01'
             ],
-        ) for i in range(1, num_turtlebots + 1)
+        ) for i in range(num_turtlebots)
     ]
 
     return LaunchDescription([
