@@ -105,9 +105,11 @@ doxygen_add_docs(docs           # target name
 ###################################
 
 # install launch files
-install(DIRECTORY
-  launch
-  DESTINATION share/${PROJECT_NAME}
-)
 
+install(DIRECTORY
+launch
+worlds
+models
+DESTINATION share/${PROJECT_NAME}
+)
 ament_package()
