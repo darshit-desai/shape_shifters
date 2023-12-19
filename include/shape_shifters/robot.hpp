@@ -27,7 +27,24 @@ class Robot : public rclcpp::Node {
    * @param node_name  name of the node
    * @param robot_name  name of the robot
    */
-  Robot(std::string const &node_name, std::string const &robot_name);
+  Robot(std::string const &node_name, std::string const &robot_name)
+      : Node(node_name), robot_ns{robot_name}, target_x{0.0}, target_y{0.0} {
+    callback_grp = this->create_callback_group(
+        rclcpp::CallbackGroupType::MutuallyExclusive);
+
+    auto cmd_vel_topic = "/" + robot_ns + "/cmd_vel";
+    auto pose_topic = "/" + robot_ns + "/odom";
+
+    // creates publisher to publish /cmd_vel topic
+    publisher_velocity = this->create_publisher<TWIST>(cmd_vel_topic, 1);
+
+    auto subCallback0 = std::bind(&RoomBa::subscribe_callback, this, _1);
+    subscription_pose =
+        this->create_subscription<ODOM>(pose_topic, 1, subCallback0);
+
+    auto processCallback = std::bind(&RoomBa::process_callback, this);
+    timer_ = this->create_wall_timer(100ms, processCallback, callback_grp);
+  }
 
   /**
    * @brief Set the goal coordinates for the robot
