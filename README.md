@@ -45,10 +45,10 @@ During the phase to we implemented the design, created the simulation, since we 
 | 2.29     | Resolving GitHub workflow errors                       | 2        | 10                    |
 | 2.30     | Adding Doxygen comments to code                        | 2        | 20                    |
 | 2.31     | Update Readme to include all deliverables              | 2        | 30                    |
-| 2.32     | Create an Iteration 2 development Branch               |          | 10                    |
-| 2.33     | Pull request and Merge the Development Branch with Main branch |          | 5                     |
-| 2.34     | Optimize code for coverage increase                    |          | 2                     |
-| 2.35     | Update author names and file header comments           |          | 10                    |
+| 2.32     | Create an Iteration 2 development Branch               |   2       | 10                    |
+| 2.33     | Pull request and Merge the Development Branch with Main branch |    2      | 5                     |
+| 2.34     | Optimize code for coverage increase                    |    2      | 2                     |
+| 2.35     | Update author names and file header comments           |     2     | 10                    |
 
 
 ### Results
