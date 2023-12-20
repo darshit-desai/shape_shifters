@@ -1,6 +1,5 @@
 /**
- * @file shapeshift.hpp
- *
+ * @file shapeshift.cpp
  * @author  Phase 1 - Shivam Sehgal (ssehgal7@umd.edu) - Driver,
  *                    Patrik Pordi (ppordi@umd.edu) - Navigator,
  *                    Darshit Desai (darshit@umd.edu) - Code designer
@@ -11,9 +10,7 @@
  * @version 0.1
  * @date 2023-12-19
  *
- *
- *
- * @copyright Copyright (c) 2023 Darshit Desai, Patrik Pordi, Shivam Sehgal
+ * @copyright Copyright (c) 2023 Darshit Desai, Patrik Pordi, Shivam Sehgal.
  * This code is licensed under the MIT License. Please see the
  * accompanying LICENSE file for the full text of the license.
  *
@@ -186,4 +183,3 @@ void Shapeshifters::setCircumRadius(double r) {
   }
   circumRadius = r;
 }
-

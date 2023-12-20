@@ -75,8 +75,10 @@ rosdep install -i --from-path src --rosdistro humble -y
 colcon build --packages-select ShapeShifters --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --parallel-workers $(nproc)
 # After successfull build source the package
 . install/setup.bash
-# ROS2 launch file run
-export TURTLEBOT3_MODEL=burger && ros2 launch shape_shifters gazebo_launch.py 
+# ROS2 launch file run in terminal window#1
+ros2 launch shape_shifters gazebo_launch.py
+# ROS2 node run in terminal window#2
+ros2 run shape_shifters main_node  # Ctrl-C to stop the simulation in both terminals 
 ```
 
 ## AIP and Product Backlog
@@ -93,10 +95,19 @@ cppcheck --enable=all --std=c++17 --suppress=missingIncludeSystem $( find . -nam
 cpplint  --filter=-build/c++11,+build/c++17,-build/namespaces,-build/include_order $( find . -name *.cpp | grep -vE -e "^(./build/|./install/|./log/)" ) &> cpplint.txt 
 ```
 
-## Test run instructions
+## Test run instructions and test coverage report generation
+Test run
 ```bash
 colcon test --packages-select shape_shifters # Command to run the test
 cat log/latest_test/shape_shifters/stdout_stderr.log # Command to view the test result
+```
+Coverage report
+```bash
+colcon build --cmake-args -DCOVERAGE=ON
+colcon test
+source install/setup.bash 
+ros2 run shape_shifters generate_coverage_report.bash 
+open {workspace_path}/install/shape_shifters/coverage/index.html
 ```
 
 ## Docs generation
