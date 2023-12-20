@@ -1,3 +1,14 @@
+/**
+ * @file shapeshift.hpp
+ * @author Darshit Desai (darshit@umd.edu)
+ * @brief ShapeShifters class header file
+ * @version 0.1
+ * @date 2023-12-19
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #ifndef INCLUDE_SHAPESHIFT_HPP_
 #define INCLUDE_SHAPESHIFT_HPP_
 
@@ -11,12 +22,12 @@
  */
 class Shapeshifters {
  private:
-  double center_x;         // X coordinate of the center
-  double center_y;         // Y coordinate of the center
-  double radius;           // Radius of the circle trajectory
-  double numberOfRobots;   // Number of robots in the formation
-  double circumRadius;     // Circumradius of the triangle trajectory
-
+  double center_x;      // X coordinate of the center
+  double center_y;      // Y coordinate of the center
+  double radius;        // Radius of the circle trajectory
+  double numRobots;     // Number of robots in the formation
+  double circumRadius;  // Circumradius of the triangle trajectory
+  double side;          // Side length of the square trajectory
  public:
   /**
    * @brief Construct a new Shapeshift object and initialize the variables
@@ -37,14 +48,14 @@ class Shapeshifters {
    *
    * @param n  Number of robots
    */
-  void setnumberOfRobots(double n);
+  void setNumRobots(double n);
 
   /**
    * @brief Get the number of robots in the formation
    *
    * @return int Number of robots
    */
-  int getnumberOfRobots();
+  int getNumRobots();
 
   /**
    * @brief Function to calculate the circle-shaped trajectory
@@ -69,6 +80,18 @@ class Shapeshifters {
    * x and y coordinates of the robots
    */
   std::vector<std::vector<double>> shapeTriangle();
+  /**
+   * @brief Set the radius of the circle trajectory
+   *
+   * @param r  Radius of the circle
+   */
+  void setRadius(double r);
+  /**
+   * @brief Set the circumradius of the triangle trajectory
+   *
+   * @param r  Circumradius of the triangle
+   */
+  void setCircumRadius(double r);
 };
 
 #endif  // INCLUDE_SHAPESHIFT_HPP_

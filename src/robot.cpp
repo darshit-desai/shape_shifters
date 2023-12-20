@@ -1,53 +1,133 @@
-#include "../include/robot.hpp"
-#include "../include/shapeshift.hpp"
+/**
+ * @file robot.cpp
+ * @author Darshit Desai (darshit@umd.edu)
+ * @brief Robot class implementation file
+ * @version 0.1
+ * @date 2023-12-19
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+#include "../include/shape_shifters/robot.hpp"
+
 #include <std_msgs/msg/string.hpp>
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::placeholders::_1;
-
-void Robot::subscribe_callback(const ODOM &msg) {
-  pose.first = msg.pose.pose.position.x;
-  pose.second = msg.pose.pose.position.y;
-  theta = asin(msg.pose.pose.orientation.z) * 2;
+/**
+ * @brief Implementation of the odom topic callback function
+ *
+ */
+void robot::odom_callback(
+    std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void>>> msg) {
+  // Get the current position of the robot
+  double x = msg->pose.pose.position.x;
+  double y = msg->pose.pose.position.y;
+  // Get the current orientation of the robot
+  double qx = msg->pose.pose.orientation.x;
+  double qy = msg->pose.pose.orientation.y;
+  double qz = msg->pose.pose.orientation.z;
+  double qw = msg->pose.pose.orientation.w;
+  // Convert the quaternion to euler angles
+  tf2::Quaternion q(qx, qy, qz, qw);
+  tf2::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  // Update the heading angle
+  setHeadingAngle(yaw);
+  // Update the current position using setter
+  setCurrentPosition(x, y);
 }
-
-void set_target(double x, double y) {
-target_x = x;
-target_y = y;
-RCLCPP_INFO_STREAM(this->get_logger(),
-                    "Going to target: [" << target_x << "," << target_y << "]");
+/**
+ * @brief Implementation of the velocity calculation function
+ * @return std::pair<double, double>
+ */
+std::pair<double, double> robot::velocity_calculation() {
+  // Define the proportional gain for linear and angular velocity
+  double kp_linear = 0.1;
+  double kp_angular = 1.0;
+  // Calculate the distance to the target
+  double distance = sqrt(pow(target.first - current_position.first, 2) +
+                         pow(target.second - current_position.second, 2));
+  // Calculate the angle to the target
+  double angle = atan2(target.second - current_position.second,
+                       target.first - current_position.first);
+  // Calculate the difference between the current angle and the target angle
+  double angle_diff = angle - headingAngle;
+  // Calculate the angular velocity
+  double angular_velocity = angle_diff * kp_angular;
+  // Calculate the linear velocity
+  double linear_velocity = distance * kp_linear;
+  return {linear_velocity, angular_velocity};
 }
-
-void Robot::move(double linear, double angular) {
+/**
+ * @brief Implementation of the get_goal_distance function
+ *
+ * @return double
+ */
+double robot::get_goal_distance() {
+  double distance = sqrt(pow(target.first - current_position.first, 2) +
+                         pow(target.second - current_position.second, 2));
+  return distance;
+}
+/**
+ * @brief Implementation of the velocity callback function
+ *
+ */
+void robot::velocity_callback() {
+  auto [linear_velocity, angular_velocity] = velocity_calculation();
+  // Publish the velocity
   geometry_msgs::msg::Twist msg;
-  msg.linear.x = linear;
-  msg.angular.z = angular;
-  publisher_velocity->publish(msg);
-}
-
-void Robot::stop() {
-  geometry_msgs::msg::Twist cmd_vel_msg;
-  cmd_vel_msg.linear.x = 0;
-  cmd_vel_msg.angular.z = 0;
-  publisher_velocity->publish(cmd_vel_msg);
-}
-
-void Robot::process_callback() {
-  std::pair<double, double> target{target_x, target_y};
-  double K_linear = 0.1;
-  double K_angular = 1.0;
-  double distance = abs(
-      sqrt(pow((target_x - (pose.first)), 2) + pow((target_y - (pose.second)), 2)));
-  double linear_speed = distance * K_linear;
-  double desired_angle_target = atan2(target_y - pose.second, target_x - pose.first);
-  double angular_speed = (desired_angle_target - theta) * K_angular;
-
-  move(linear_speed, angular_speed);
-
-  if (distance < 0.1) {
-    stop();
-    RCLCPP_INFO(this->get_logger(), "I have reached the target");
+  msg.linear.x = linear_velocity;
+  msg.angular.z = angular_velocity;
+  publisher_->publish(msg);
+  if (get_goal_distance() < 0.25) {
+    // Stop the robot
+    msg.linear.x = 0;
+    msg.angular.z = 0;
+    publisher_->publish(msg);
+    // Print a message
+    RCLCPP_INFO_STREAM(rclcpp::get_logger("tbot_walker"),
+                       "Robot reached the target!");
   }
+}
+/**
+ * @brief Implementation of the setTarget function
+ *
+ */
+void robot::setTarget(double x, double y) {
+  target.first = x;
+  target.second = y;
+}
+
+/**
+ * @brief Implementation of the get target function
+ *
+ */
+std::pair<double, double> robot::getTarget() { return target; }
+/**
+ * @brief Implementation of the setCurrentPosition function
+ *
+ */
+void robot::setCurrentPosition(double x, double y) {
+  current_position.first = x;
+  current_position.second = y;
+}
+
+/**
+ * @brief Implementation of the get Heading Angle function
+ *
+ */
+double robot::getHeadingAngle() { return headingAngle; }
+
+/**
+ * @brief Implementation of the set Heading Angle function
+ *
+ */
+void robot::setHeadingAngle(double angle) { headingAngle = angle; }
+
+/**
+ * @brief Implementation of the get current position function
+ *
+ */
+std::pair<double, double> robot::getCurrentPosition() {
+  return current_position;
 }

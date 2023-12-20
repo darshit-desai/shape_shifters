@@ -1,97 +1,116 @@
-#ifndef INCLUDE_ROBOT_HPP_
-#define INCLUDE_ROBOT_HPP_
-
-#include <string>
-#include <utility>
-#include <chrono>
-#include <iostream>
-#include <geometry_msgs/msg/twist.hpp>
-#include <nav_msgs/msg/odometry.hpp>
-#include <rclcpp/rclcpp.hpp>
-
-using std::placeholders::_1;
-using namespace std::chrono_literals;
-
-using TWIST = geometry_msgs::msg::Twist;
-using ODOM = nav_msgs::msg::Odometry;
-
 /**
- * @brief Class for the Robot node
+ * @file robot.hpp
+ * @author your name (you@domain.com)
+ * @brief Header file for the robot class
+ * @version 0.1
+ * @date 2023-12-19
+ *
+ * @copyright Copyright (c) 2023
  *
  */
-class Robot : public rclcpp::Node {
+
+#pragma once
+
+#include <tf2/LinearMath/Matrix3x3.h>
+#include <tf2/LinearMath/Quaternion.h>
+
+#include <chrono>
+#include <geometry_msgs/msg/twist.hpp>
+#include <iostream>
+#include <nav_msgs/msg/odometry.hpp>
+#include <rclcpp/rclcpp.hpp>
+#include <string>
+#include <utility>
+/**
+ * @brief Class for the robot node
+ *
+ */
+class robot : public rclcpp::Node {
  public:
   /**
-   * @brief Construct a new Robot object
+   * @brief Construct a new Walker object
    *
-   * @param node_name  name of the node
-   * @param robot_name  name of the robot
    */
-  Robot(std::string const &node_name, std::string const &robot_name)
-      : Node(node_name), robot_ns{robot_name}, target_x{0.0}, target_y{0.0} {
-    callback_grp = this->create_callback_group(
-        rclcpp::CallbackGroupType::MutuallyExclusive);
-
-    auto cmd_vel_topic = "/" + robot_ns + "/cmd_vel";
-    auto pose_topic = "/" + robot_ns + "/odom";
-
-    // creates publisher to publish /cmd_vel topic
-    publisher_velocity = this->create_publisher<TWIST>(cmd_vel_topic, 1);
-
-    auto subCallback0 = std::bind(&RoomBa::subscribe_callback, this, _1);
-    subscription_pose =
-        this->create_subscription<ODOM>(pose_topic, 1, subCallback0);
-
-    auto processCallback = std::bind(&RoomBa::process_callback, this);
-    timer_ = this->create_wall_timer(100ms, processCallback, callback_grp);
+  robot(std::string name, std::string node_name)
+      : Node(node_name), namespace_robot{name}, target{0, 0} {
+    RCLCPP_INFO_STREAM(rclcpp::get_logger("tbot_walker"),
+                       "Setting up Robot Node...");
+    // Create a publisher for the cmd_vel topic
+    auto velocity_topic = "/" + namespace_robot + "/cmd_vel";
+    publisher_ =
+        this->create_publisher<geometry_msgs::msg::Twist>(velocity_topic, 10);
+    // Create a subscription to the odom topic
+    auto odom_topic = "/" + namespace_robot + "/odom";
+    subscription_ = this->create_subscription<nav_msgs::msg::Odometry>(
+        odom_topic, 10,
+        std::bind(&robot::odom_callback, this, std::placeholders::_1));
+    // Create a timer to publish the velocity
+    timer_ =
+        this->create_wall_timer(std::chrono::milliseconds(100),
+                                std::bind(&robot::velocity_callback, this));
   }
-
   /**
-   * @brief Set the goal coordinates for the robot
+   * @brief Subscribe to the odom topic using callback function
    *
-   * @param x  x coordinate of the goal
-   * @param y  y coordinate of the goal
    */
-  void set_target(double x, double y);
+  void odom_callback(
+      std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void>>> msg);
+  /**
+   * @brief Calculate the velocity and publish it
+   *
+   */
+  void velocity_callback();
+  /**
+   * @brief Setters for the target
+   *
+   */
+  void setTarget(double x, double y);
+  /**
+   * @brief Function to calculate the velocity
+   *
+   * @return std::pair<double, double>
+   */
+  std::pair<double, double> velocity_calculation();
+  /**
+   * @brief Function to calculate the distance to the target
+   *
+   * @return double
+   */
+  double get_goal_distance();
+  /**
+   * @brief Setter for the current position
+   *
+   */
+  void setCurrentPosition(double x, double y);
+  /**
+   * @brief Getter for the current position
+   *
+   * @return std::pair<double, double>
+   */
+  std::pair<double, double> getCurrentPosition();
+  /**
+   * @brief Getter for the target
+   *
+   */
+  std::pair<double, double> getTarget();
+  /**
+   * @brief Getter for the heading angle
+   *
+   * @return double
+   */
+  double getHeadingAngle();
+  /**
+   * @brief Setter for the heading angle
+   *
+   */
+  void setHeadingAngle(double angle);
 
  private:
-  double target_x;       // X coordinate of the target/goal
-  double target_y;       // Y coordinate of the target/goal
-  double headingAngle;   // Heading angle of the robot
-  std::string robot_ns;  // Namespace of the robot
-
-  // ROS 2 Node components
-  rclcpp::Subscription<ODOM>::SharedPtr subscription_1;  // Odometry subscription
-  rclcpp::Publisher<TWIST>::SharedPtr publisher_1;       // Velocity publisher
-  rclcpp::TimerBase::SharedPtr timer_;                    // Timer for periodic callbacks
-  rclcpp::CallbackGroup::SharedPtr callback_grp;         // Callback group for node components
-
-  /**
-   * @brief Subscribe callback function to get the pose of the robot
-   *
-   * @param msg  message of type ODOM
-   */
-  void subscribe_callback(const ODOM &msg);
-
-  /**
-   * @brief Process callback function to publish velocity to the robot
-   *
-   */
-  void process_callback();
-
-  /**
-   * @brief Move the robot by publishing velocity
-   *
-   * @param linear  linear velocity
-   * @param angular  angular velocity
-   */
-  void move(double linear, double angular);
-
-  /**
-   * @brief Stop the robot by publishing 0 velocity
-   *
-   */
-  void stop();
+  std::string namespace_robot;
+  std::pair<double, double> target;
+  std::pair<double, double> current_position;
+  rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_;
+  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr subscription_;
+  rclcpp::TimerBase::SharedPtr timer_;
+  double headingAngle;
 };
-
-#endif  // INCLUDE_ROBOT_HPP_
