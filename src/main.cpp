@@ -1,3 +1,5 @@
+// Copyright (c) [2023] [Darshit, Shivam, Patrik]
+
 /**
  * @file main.cpp
  * @author  Phase 1 - Shivam Sehgal (ssehgal7@umd.edu) - Driver,
