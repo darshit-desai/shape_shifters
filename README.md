@@ -1,5 +1,5 @@
 # Project ShapeShifters
-![CICD Workflow status](https://github.com/shivamsehgal77/ShapeShifters/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/shivamsehgal77/ShapeShifters/branch/main/graph/badge.svg)](https://codecov.io/gh/shivamsehgal77/ShapeShifters)
+![CICD Workflow status](https://github.com/shivamsehgal77/shape_shifters/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/shivamsehgal77/shape_shifters/branch/main/graph/badge.svg)](https://codecov.io/gh/shivamsehgal77/shape_shifters)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
 
 ## Description
@@ -50,15 +50,15 @@ During phase to we implemented the design, created the simulation, since we foll
 ### Results
 Below are the screenshots of UML and the launch file:
 
-* Activity diagram
+####   Phase 2 CLass Activity diagram
 
-![](screenshots/Phase1_Results/UML_activity.png)
+![](screenshots/Phase2_Results/ClassActivitydigram_Phase2.png)
 
-* Class diagram 
+#### Phase 2 Class diagram 
 
 ![](screenshots/Phase2_Results/UMLClassdiagram_Phase2.png)
 
-* Shape example
+#### Shape example
 
 ![](screenshots/Phase2_Results/circle.png)
 
@@ -76,15 +76,15 @@ https://docs.google.com/presentation/d/1W6J0OQgDlOtNGRTyHkPeD6P_r9gWOQOXk3N45q3P
 ### Results
 Below are the screenshots of UML and the launch file:
 
-* Activity diagram
+#### Phase 1 Activity diagram
 
 ![](screenshots/Phase1_Results/UML_activity.png)
 
-* Class diagram 
+#### Phase 1 Class diagram 
 
 ![](screenshots/Phase1_Results/UMLClassdiagram.png)
 
-* Launch File run example
+#### Phase 1 Launch File run example
 
 ![](screenshots/Phase1_Results/launchfile_ex.png)
 
