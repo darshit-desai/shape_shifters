@@ -1,0 +1,8 @@
+<map id="include/shape_shifters/robot.hpp" name="include/shape_shifters/robot.hpp">
+<area shape="rect" id="node1" title="Robot class." alt="" coords="154,5,321,47"/>
+<area shape="rect" id="node2" href="$leader_8cpp.html" title="Implementation of the Leader class." alt="" coords="5,184,117,211"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Implementation of main.cpp file." alt="" coords="141,184,246,211"/>
+<area shape="rect" id="node4" href="$robot_8cpp.html" title="Implementation of Robot class." alt="" coords="396,102,503,129"/>
+<area shape="rect" id="node5" href="$leader_8hpp.html" title="Leader class." alt="" coords="154,95,321,136"/>
+<area shape="rect" id="node6" href="$integration__test_8cpp.html" title="Integration tests for the shape shifters package." alt="" coords="271,184,452,211"/>
+</map>

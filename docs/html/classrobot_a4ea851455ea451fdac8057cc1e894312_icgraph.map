@@ -1,0 +1,5 @@
+<map id="robot::velocity_calculation" name="robot::velocity_calculation">
+<area shape="rect" id="node1" title="Function to calculate the velocity." alt="" coords="377,5,572,32"/>
+<area shape="rect" id="node2" href="$classrobot.html#a246633d9710e7544dda3c3c6bf24e792" title="Calculate the velocity and publish it." alt="" coords="152,5,329,32"/>
+<area shape="rect" id="node3" href="$classrobot.html#a2c42bc581181105b6c6d98dad1ac5dc5" title="Construct a new Walker object." alt="" coords="5,5,104,32"/>
+</map>

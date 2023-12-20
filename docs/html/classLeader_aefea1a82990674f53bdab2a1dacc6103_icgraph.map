@@ -1,0 +1,5 @@
+<map id="Leader::formation_switch" name="Leader::formation_switch">
+<area shape="rect" id="node1" title="Make a function for switch case which returns formation points." alt="" coords="428,5,615,32"/>
+<area shape="rect" id="node2" href="$classLeader.html#a2024c467fe5c4dab1ad66d1fd18fd39c" title="Method to generate the formation." alt="" coords="172,5,380,32"/>
+<area shape="rect" id="node3" href="$classLeader.html#a0bb2d1b326509e47cb41d39c335e44a4" title="Construct a new Leader object." alt="" coords="5,5,124,32"/>
+</map>

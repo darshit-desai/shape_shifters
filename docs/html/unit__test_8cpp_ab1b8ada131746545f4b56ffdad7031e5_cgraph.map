@@ -1,0 +1,6 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Construct a new TEST object for the negative circle formation for testing the exception." alt="" coords="5,56,60,83"/>
+<area shape="rect" id="node2" href="$classShapeshifters.html#a82161f1e9c8350678ca8c19417151cf7" title="Set the center of the trajectory." alt="" coords="125,5,306,32"/>
+<area shape="rect" id="node3" href="$classShapeshifters.html#a0c784a0ef82b59b2f55d110daa27e478" title="Set the number of robots in the formation." alt="" coords="108,56,323,83"/>
+<area shape="rect" id="node4" href="$classShapeshifters.html#ab3ee048b2eca2286f3bbbe26370d8b85" title="Set the radius of the circle trajectory." alt="" coords="124,107,307,133"/>
+</map>

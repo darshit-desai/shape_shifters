@@ -1,0 +1,10 @@
+<map id="Leader" name="Leader">
+<area shape="rect" id="node1" title="Class for the leader node." alt="" coords="123,657,321,808"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,495,108,573"/>
+<area shape="rect" id="node3" title=" " alt="" coords="133,488,311,580"/>
+<area shape="rect" id="node4" title=" " alt="" coords="49,348,232,425"/>
+<area shape="rect" id="node5" title=" " alt="" coords="74,145,231,223"/>
+<area shape="rect" id="node6" title=" " alt="" coords="195,5,233,83"/>
+<area shape="rect" id="node7" title=" " alt="" coords="217,247,347,324"/>
+<area shape="rect" id="node8" title=" " alt="" coords="335,495,421,573"/>
+</map>

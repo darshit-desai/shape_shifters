@@ -1,0 +1,4 @@
+<map id="Shapeshifters::getNumRobots" name="Shapeshifters::getNumRobots">
+<area shape="rect" id="node1" title="Get the number of robots in the formation." alt="" coords="108,5,323,32"/>
+<area shape="rect" id="node2" href="$unit__test_8cpp.html#a7b6c6ef1a761205424b96d8734381a5d" title="Construct a new TEST object for the circle formation." alt="" coords="5,5,60,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Construct a new TEST object for the circle formation." alt="" coords="5,107,60,133"/>
+<area shape="rect" id="node2" href="$classShapeshifters.html#a22e83a3a89d392c9c4ec20f91c6dda8c" title="Get the number of robots in the formation." alt="" coords="108,5,323,32"/>
+<area shape="rect" id="node3" href="$classShapeshifters.html#a82161f1e9c8350678ca8c19417151cf7" title="Set the center of the trajectory." alt="" coords="125,56,306,83"/>
+<area shape="rect" id="node4" href="$classShapeshifters.html#a0c784a0ef82b59b2f55d110daa27e478" title="Set the number of robots in the formation." alt="" coords="108,107,323,133"/>
+<area shape="rect" id="node5" href="$classShapeshifters.html#ab3ee048b2eca2286f3bbbe26370d8b85" title="Set the radius of the circle trajectory." alt="" coords="124,157,307,184"/>
+<area shape="rect" id="node6" href="$classShapeshifters.html#a2b3752ac423d4152ac40bed6ee4b378b" title="Function to calculate the circle&#45;shaped trajectory." alt="" coords="118,208,313,235"/>
+</map>

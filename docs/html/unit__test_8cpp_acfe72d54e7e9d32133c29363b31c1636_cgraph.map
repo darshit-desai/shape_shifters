@@ -1,0 +1,6 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Construct a new TEST object for the triangle formation." alt="" coords="5,71,60,98"/>
+<area shape="rect" id="node2" href="$classShapeshifters.html#a0ebcc60c52b5bc8cc0aabae5fce30be6" title="Set the circumradius of the triangle trajectory." alt="" coords="123,5,307,47"/>
+<area shape="rect" id="node3" href="$classShapeshifters.html#a0c784a0ef82b59b2f55d110daa27e478" title="Set the number of robots in the formation." alt="" coords="108,71,323,98"/>
+<area shape="rect" id="node4" href="$classShapeshifters.html#a16166472223ccd6f705123f0d9f4df49" title="Function to calculate the triangle&#45;shaped trajectory." alt="" coords="111,122,319,149"/>
+</map>
