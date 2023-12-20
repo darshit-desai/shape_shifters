@@ -6,10 +6,46 @@
 The project demonstrates a swarm control algorithm on a group of turtlebot robots. The turtlebot swarm executes a shape formation of different shapes when seen from the top view autonomously based on user input. The swarm will follow a leader follower configuration.
 
 ## Phase-2 Progress:
-1. Design inital UML class and activity diagrams
-2. Setup code coverage in codecov
-3. Add launch files for launching a single turtlebot in empty world
-4. Add template integration and unit tests
+During phase to we implemented the design, created the simulation, since we followed API and TDD you can see our backlog for this sprint below.
+
+| ID | Task                                     | Sprint | Estimated Time (hrs) |
+|----------|--------------------------------------------------------|----------|-----------------------|
+| 2.1      | Create urdf folder to include turtlebot3 burger model files | 2        | 10                    |
+| 2.2      | Change launch files to spawn multiple turtlebots      | 2        | 60                    |
+| 2.3      | Create a publisher to publish to cmd_vel of one turtlebot | 2        | 10                    |
+| 2.4      | Updating CMakeLists and package.xml                   | 2        | 5                     |
+| 2.5      | Update UML diagrams                                    | 2        | 20                    |
+| 2.6      | Update Readme                                          | 2        | 10                    |
+| 2.7      | Create a subscriber to subscribe to odom of 1 turtlebot | 2        | 10                    |
+| 2.8      | Update publisher to publish to multiple turtlebots    | 2        | 20                    |
+| 2.9      | Update launch file for launching multiple turtlebots  | 2        | 20                    |
+| 2.10     | Update subscriber to subscribe to multiple turtlebots | 2        | 25                    |
+| 2.11     | Create HPP for all classes                             | 2        | 30                    |
+| 2.12     | Write function in robot formation program to form a square | 2        | 60                    |
+| 2.13     | Create level 1 test cases                               | 2        | 60                    |
+| 2.14     | Update UML diagrams                                    | 2        | 20                    |
+| 2.15     | Create header file for formation in ROS (hpp)         | 2        | 30                    |
+| 2.16     | Create the implementation for the formation in ROS (cpp) | 2        | 30                    |
+| 2.17     | Create main file (cpp)                                 | 2        | 25                    |
+| 2.18     | Create Level 2 tests (rostest)                         | 2        | 90                    |
+| 2.19     | Add bash script for generating coverage report         | 2        | 25                    |
+| 2.20     | Modify ROS formation HPP to include 2 more formations  | 2        | 40                    |
+| 2.21     | Write function in robot formation program to form a triangle | 2        | 20                    |
+| 2.22     | Write function in robot formation program to form a circle | 2        | 20                    |
+| 2.23     | Update cpp to implement the ROS formation              | 2        | 50                    |
+| 2.24     | Modify launch file to spawn 24 robots                  | 2        | 30                    |
+| 2.25     | Do CPP lint and CPP check and resolve errors           | 2        | 10                    |
+| 2.26     | Add script to generate coverage report                 | 2        | 5                     |
+| 2.27     | Update test cases                                      | 2        | 2                     |
+| 2.28     | Update GitHub workflow                                 | 2        | 10                    |
+| 2.29     | Resolving GitHub workflow errors                       | 2        | 10                    |
+| 2.30     | Adding Doxygen comments to code                        | 2        | 20                    |
+| 2.31     | Update Readme to include all deliverables              | 2        | 30                    |
+| 2.32     | Create an Iteration 2 development Branch               |          | 10                    |
+| 2.33     | Pull request and Merge the Development Branch with Main branch |          | 5                     |
+| 2.34     | Optimize code for coverage increase                    |          | 2                     |
+| 2.35     | Update author names and file header comments           |          | 10                    |
+
 
 ### Results
 Below are the screenshots of UML and the launch file:
