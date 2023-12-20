@@ -62,6 +62,11 @@ Below are the screenshots of UML and the launch file:
 
 ![](screenshots/Phase2_Results/circle.png)
 
+
+General progress, accomplishments, problems encountered can be found on the following presentation:
+https://docs.google.com/presentation/d/1W6J0OQgDlOtNGRTyHkPeD6P_r9gWOQOXk3N45q3PqNw/edit#slide=id.g2a89b81276e_0_13
+
+
 ## Phase-1 Progress:
 1. Design inital UML class and activity diagrams
 2. Setup code coverage in codecov
