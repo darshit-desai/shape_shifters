@@ -1,5 +1,5 @@
 # Project ShapeShifters
-![CICD Workflow status](https://github.com/shivamsehgal77/ShapeShifters/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/shivamsehgal77/ShapeShifters/branch/main/graph/badge.svg)](https://codecov.io/gh/shivamsehgal77/ShapeShifters)
+![CICD Workflow status](https://github.com/shivamsehgal77/shape_shifters/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/shivamsehgal77/shape_shifters/branch/main/graph/badge.svg)](https://codecov.io/gh/shivamsehgal77/shape_shifters)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
 
 ## Description
