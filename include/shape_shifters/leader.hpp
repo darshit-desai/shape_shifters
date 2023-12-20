@@ -54,4 +54,9 @@ class Leader : public rclcpp::Node {
    * @return std::vector<std::vector<double>>
    */
   std::vector<std::vector<double>> import_txt(std::string path);
+  /**
+   * @brief Make a function for switch case which returns formation points
+   *
+   */
+  std::vector<std::vector<double>> formation_switch(int trajectory_option);
 };

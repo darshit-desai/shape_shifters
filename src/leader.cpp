@@ -40,10 +40,7 @@ void Leader::binding_callback() {}
  *
  */
 void Leader::formation_generator() {
-  Shapeshifters shapeShift;
   std::vector<std::vector<double>> formation_points;
-  shapeShift.setCenter(7.5, 7.5);
-  shapeShift.setNumRobots(24);
   int trajectory_option{0};
   std::cout << "Enter the trajectory option: 1 for circle, 2 for square 3 for "
                "triangle \n ";
@@ -53,27 +50,37 @@ void Leader::formation_generator() {
   std::string path =
       "install/shape_shifters/share/shape_shifters/initial_positions.txt";
   robot_position = import_txt(path);
+  formation_points = formation_switch(trajectory_option);
+  coordinate_assignment(robot_position, formation_points);
+}
+/**
+ * @brief Make a function for switch case which returns formation points
+ * 
+ */
+std::vector<std::vector<double>> Leader::formation_switch(int trajectory_option) {
+  Shapeshifters shapeShift;
+  std::vector<std::vector<double>> formation_points;
+  shapeShift.setCenter(7.5, 7.5);
+  shapeShift.setNumRobots(24);
   switch (trajectory_option) {
     case 1:
       formation_points = shapeShift.shapeCircle();
       std::cout << "Executing circle trajectory \n" << std::endl;
-      // Call the coordinate_assignment method
-      coordinate_assignment(robot_position, formation_points);
       break;
     case 2:
       formation_points = shapeShift.shapeSquare();
       std::cout << "Executing square trajectory \n" << std::endl;
-      coordinate_assignment(robot_position, formation_points);
       break;
     case 3:
       formation_points = shapeShift.shapeTriangle();
       std::cout << "Executing triangle trajectory \n" << std::endl;
-      coordinate_assignment(robot_position, formation_points);
       break;
     default:
       std::cout << "Invalid option. Exiting... \n";
-      exit(0);
+      // Return an assert throw
+      throw std::invalid_argument("Invalid option. Exiting... \n");
   }
+  return formation_points;
 }
 
 /**

@@ -42,3 +42,5 @@ genhtml $PROG_DIR/coverage_cleaned.info --output-directory \
 echo "Code Coverage generated:"
 echo "     $PROG_DIR/coverage_cleaned.info"
 echo "     $EXEC_DIR/install/$ROS_PACKAGE_NAME/coverage/index.html"
+
+
