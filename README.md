@@ -5,6 +5,27 @@
 ## Description
 The project demonstrates a swarm control algorithm on a group of turtlebot robots. The turtlebot swarm executes a shape formation of different shapes when seen from the top view autonomously based on user input. The swarm will follow a leader follower configuration.
 
+## Phase-2 Progress:
+1. Design inital UML class and activity diagrams
+2. Setup code coverage in codecov
+3. Add launch files for launching a single turtlebot in empty world
+4. Add template integration and unit tests
+
+### Results
+Below are the screenshots of UML and the launch file:
+
+* Activity diagram
+
+![](screenshots/Phase1_Results/UML_activity.png)
+
+* Class diagram 
+
+![](screenshots/Phase2_Results/UMLClassdiagram_Phase2.png)
+
+* Shape example
+
+![](screenshots/Phase2_Results/circle.png)
+
 ## Phase-1 Progress:
 1. Design inital UML class and activity diagrams
 2. Setup code coverage in codecov
