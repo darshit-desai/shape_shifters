@@ -1,0 +1,5 @@
+<map id="Leader::coordinate_assignment" name="Leader::coordinate_assignment">
+<area shape="rect" id="node1" title="Method to assign the target position to the robots." alt="" coords="428,5,571,47"/>
+<area shape="rect" id="node2" href="$classLeader.html#a2024c467fe5c4dab1ad66d1fd18fd39c" title="Method to generate the formation." alt="" coords="172,13,380,39"/>
+<area shape="rect" id="node3" href="$classLeader.html#a0bb2d1b326509e47cb41d39c335e44a4" title="Construct a new Leader object." alt="" coords="5,13,124,39"/>
+</map>

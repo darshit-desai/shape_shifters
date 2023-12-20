@@ -1,0 +1,9 @@
+<map id="robot::robot" name="robot::robot">
+<area shape="rect" id="node1" title="Construct a new Walker object." alt="" coords="5,81,104,108"/>
+<area shape="rect" id="node2" href="$classrobot.html#a3f90e1f396526eb5744dd76f3e991fda" title="Subscribe to the odom topic using callback function." alt="" coords="159,56,322,83"/>
+<area shape="rect" id="node5" href="$classrobot.html#a246633d9710e7544dda3c3c6bf24e792" title="Calculate the velocity and publish it." alt="" coords="152,107,329,133"/>
+<area shape="rect" id="node3" href="$classrobot.html#a4cbcbea2ad3373bd8f4d8d03369e31e4" title="Setter for the current position." alt="" coords="383,5,567,32"/>
+<area shape="rect" id="node4" href="$classrobot.html#a8a8ef642875914d7c97231b271424471" title="Setter for the heading angle." alt="" coords="387,56,562,83"/>
+<area shape="rect" id="node6" href="$classrobot.html#a9df346c6101143d5873ea3ca6cb6de57" title="Function to calculate the distance to the target." alt="" coords="383,107,566,133"/>
+<area shape="rect" id="node7" href="$classrobot.html#a4ea851455ea451fdac8057cc1e894312" title="Function to calculate the velocity." alt="" coords="377,157,572,184"/>
+</map>

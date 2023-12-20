@@ -1,0 +1,7 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title="Construct a new TEST object for the square formation with negative circum radius." alt="" coords="5,93,60,120"/>
+<area shape="rect" id="node2" href="$classShapeshifters.html#a82161f1e9c8350678ca8c19417151cf7" title="Set the center of the trajectory." alt="" coords="125,5,306,32"/>
+<area shape="rect" id="node3" href="$classShapeshifters.html#a0ebcc60c52b5bc8cc0aabae5fce30be6" title="Set the circumradius of the triangle trajectory." alt="" coords="123,57,307,98"/>
+<area shape="rect" id="node4" href="$classShapeshifters.html#a0c784a0ef82b59b2f55d110daa27e478" title="Set the number of robots in the formation." alt="" coords="108,123,323,149"/>
+<area shape="rect" id="node5" href="$classShapeshifters.html#aff6d49f5dd389199e191793926b69f00" title="Function to calculate the square&#45;shaped trajectory." alt="" coords="114,173,317,200"/>
+</map>

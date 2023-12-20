@@ -1,0 +1,5 @@
+<map id="robot::odom_callback" name="robot::odom_callback">
+<area shape="rect" id="node1" title="Subscribe to the odom topic using callback function." alt="" coords="5,31,168,57"/>
+<area shape="rect" id="node2" href="$classrobot.html#a4cbcbea2ad3373bd8f4d8d03369e31e4" title="Setter for the current position." alt="" coords="216,5,400,32"/>
+<area shape="rect" id="node3" href="$classrobot.html#a8a8ef642875914d7c97231b271424471" title="Setter for the heading angle." alt="" coords="221,56,395,83"/>
+</map>

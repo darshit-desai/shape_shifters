@@ -1,0 +1,5 @@
+<map id="robot::velocity_callback" name="robot::velocity_callback">
+<area shape="rect" id="node1" title="Calculate the velocity and publish it." alt="" coords="5,31,183,57"/>
+<area shape="rect" id="node2" href="$classrobot.html#a9df346c6101143d5873ea3ca6cb6de57" title="Function to calculate the distance to the target." alt="" coords="237,5,419,32"/>
+<area shape="rect" id="node3" href="$classrobot.html#a4ea851455ea451fdac8057cc1e894312" title="Function to calculate the velocity." alt="" coords="231,56,425,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="robot::velocity_callback" name="robot::velocity_callback">
+<area shape="rect" id="node1" title="Calculate the velocity and publish it." alt="" coords="152,5,329,32"/>
+<area shape="rect" id="node2" href="$classrobot.html#a2c42bc581181105b6c6d98dad1ac5dc5" title="Construct a new Walker object." alt="" coords="5,5,104,32"/>
+</map>

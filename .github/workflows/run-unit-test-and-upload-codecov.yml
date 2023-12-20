@@ -34,7 +34,9 @@ name: Run Unit Test and Upload Coverage Report
 on:
   # Triggered whenever push to main 
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - Dev_Iter2Branch
 
   # Triggered whenever a pull request is created on main
   pull_request:
@@ -65,17 +67,25 @@ jobs:
           sudo apt install -y doxygen lcov gcovr pandoc
           
       # Run all unit test, integration test, and generate combined coverage report
-      # - name: Build, run unit test, and generate coverage report
-      #   run: |
-      #     ./do-tests.bash
-      #     ./do-docs.bash
-
+      - name: Build, run unit test, and generate coverage report
+        run: |
+          source /opt/ros/humble/setup.bash
+          colcon build --packages-select shape_shifters --cmake-args -DCOVERAGE=ON
+          colcon test --packages-select shape_shifters --event-handlers console_cohesion+ --return-code-on-test-failure
+          cat log/latest_test/shape_shifters/stdout_stderr.log
+      # Generate combined coverage report
+      - name: Generate combined coverage report
+        run: |
+          source /opt/ros/humble/setup.bash
+          source install/setup.bash
+          ros2 run shape_shifters generate_coverage_report.bash
+          
       # Upload coverage result to CodeCov
       - name: Upload coverage result to CodeCov
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ${{github.workspace}}/build/test_coverage_merged.info
+          files: ${{github.workspace}}/install/shape_shifters/lib/shape_shifters/coverage_cleaned.info
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)      
           

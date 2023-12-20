@@ -1,0 +1,11 @@
+<map id="Leader::formation_generator" name="Leader::formation_generator">
+<area shape="rect" id="node1" title="Method to generate the formation." alt="" coords="5,107,213,133"/>
+<area shape="rect" id="node2" href="$classLeader.html#a7395eb813153f9eb20c8e59ba2036920" title="Method to assign the target position to the robots." alt="" coords="283,41,426,82"/>
+<area shape="rect" id="node3" href="$classLeader.html#aefea1a82990674f53bdab2a1dacc6103" title="Make a function for switch case which returns formation points." alt="" coords="261,107,448,133"/>
+<area shape="rect" id="node9" href="$classLeader.html#a3178becc6f9feb85fb7cfe1fe4a3faba" title="Method to import the txt file." alt="" coords="283,157,426,184"/>
+<area shape="rect" id="node4" href="$classShapeshifters.html#a82161f1e9c8350678ca8c19417151cf7" title="Set the center of the trajectory." alt="" coords="513,5,694,32"/>
+<area shape="rect" id="node5" href="$classShapeshifters.html#a0c784a0ef82b59b2f55d110daa27e478" title="Set the number of robots in the formation." alt="" coords="496,56,711,83"/>
+<area shape="rect" id="node6" href="$classShapeshifters.html#a2b3752ac423d4152ac40bed6ee4b378b" title="Function to calculate the circle&#45;shaped trajectory." alt="" coords="506,107,701,133"/>
+<area shape="rect" id="node7" href="$classShapeshifters.html#aff6d49f5dd389199e191793926b69f00" title="Function to calculate the square&#45;shaped trajectory." alt="" coords="502,157,705,184"/>
+<area shape="rect" id="node8" href="$classShapeshifters.html#a16166472223ccd6f705123f0d9f4df49" title="Function to calculate the triangle&#45;shaped trajectory." alt="" coords="499,208,707,235"/>
+</map>

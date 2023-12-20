@@ -1,0 +1,13 @@
+<map id="Leader::Leader" name="Leader::Leader">
+<area shape="rect" id="node1" title="Construct a new Leader object." alt="" coords="5,81,124,108"/>
+<area shape="rect" id="node2" href="$classLeader.html#ae55f92484ab0827df8392aeb5ee03db7" title="Callback function for the timer." alt="" coords="185,56,367,83"/>
+<area shape="rect" id="node3" href="$classLeader.html#a2024c467fe5c4dab1ad66d1fd18fd39c" title="Method to generate the formation." alt="" coords="172,107,380,133"/>
+<area shape="rect" id="node4" href="$classLeader.html#a7395eb813153f9eb20c8e59ba2036920" title="Method to assign the target position to the robots." alt="" coords="450,41,593,82"/>
+<area shape="rect" id="node5" href="$classLeader.html#aefea1a82990674f53bdab2a1dacc6103" title="Make a function for switch case which returns formation points." alt="" coords="428,107,615,133"/>
+<area shape="rect" id="node11" href="$classLeader.html#a3178becc6f9feb85fb7cfe1fe4a3faba" title="Method to import the txt file." alt="" coords="450,157,593,184"/>
+<area shape="rect" id="node6" href="$classShapeshifters.html#a82161f1e9c8350678ca8c19417151cf7" title="Set the center of the trajectory." alt="" coords="679,5,861,32"/>
+<area shape="rect" id="node7" href="$classShapeshifters.html#a0c784a0ef82b59b2f55d110daa27e478" title="Set the number of robots in the formation." alt="" coords="663,56,877,83"/>
+<area shape="rect" id="node8" href="$classShapeshifters.html#a2b3752ac423d4152ac40bed6ee4b378b" title="Function to calculate the circle&#45;shaped trajectory." alt="" coords="673,107,867,133"/>
+<area shape="rect" id="node9" href="$classShapeshifters.html#aff6d49f5dd389199e191793926b69f00" title="Function to calculate the square&#45;shaped trajectory." alt="" coords="669,157,871,184"/>
+<area shape="rect" id="node10" href="$classShapeshifters.html#a16166472223ccd6f705123f0d9f4df49" title="Function to calculate the triangle&#45;shaped trajectory." alt="" coords="666,208,874,235"/>
+</map>
