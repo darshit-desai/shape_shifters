@@ -1,11 +1,20 @@
 /**
  * @file leader.cpp
- * @author Darshit Desai (darshit@umd.edu)
+ *
+ * @author  Phase 1 - Shivam Sehgal (ssehgal7@umd.edu) - Driver,
+ *                    Patrik Pordi (ppordi@umd.edu) - Navigator,
+ *                    Darshit Desai (darshit@umd.edu) - Code designer
+ *          Phase 2 - Shivam Sehgal (ssehgal7@umd.edu) - Code designer,
+ *                    Patrik Pordi (ppordi@umd.edu) - Driver,
+ *                    Darshit Desai (darshit@umd.edu) - Navigator
  * @brief Implementation of the Leader class
  * @version 0.1
  * @date 2023-12-19
  *
- * @copyright Copyright (c) 2023
+ *
+ * @copyright Copyright (c) 2023 Darshit Desai, Patrik Pordi, Shivam Sehgal
+ * This code is licensed under the MIT License. Please see the
+ * accompanying LICENSE file for the full text of the license.
  *
  */
 #include "../include/shape_shifters/leader.hpp"
@@ -17,6 +26,7 @@
  * @brief Construct a new Leader object
  *
  * @param robot_array
+ * @param run_formation_generator
  */
 Leader::Leader(std::vector<std::shared_ptr<robot>> const &robot_array,
                bool run_formation_generator)
@@ -55,9 +65,12 @@ void Leader::formation_generator() {
 }
 /**
  * @brief Make a function for switch case which returns formation points
- * 
+ * @param trajectory_option
+ * @return std::vector<std::vector<double>>
+ *
  */
-std::vector<std::vector<double>> Leader::formation_switch(int trajectory_option) {
+std::vector<std::vector<double>> Leader::formation_switch(
+    int trajectory_option) {
   Shapeshifters shapeShift;
   std::vector<std::vector<double>> formation_points;
   shapeShift.setCenter(7.5, 7.5);
@@ -122,6 +135,7 @@ void Leader::coordinate_assignment(
 
 /**
  * @brief Method to import the txt file
+ * @param path
  *
  * @return std::vector<std::vector<double>>
  */

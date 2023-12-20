@@ -1,12 +1,18 @@
 /**
  * @file robot.cpp
- * @author Darshit Desai (darshit@umd.edu)
- * @brief Robot class implementation file
+ *
+ * @author  Phase 1 - Shivam Sehgal (ssehgal7@umd.edu) - Driver,
+ *                    Patrik Pordi (ppordi@umd.edu) - Navigator,
+ *                    Darshit Desai (darshit@umd.edu) - Code designer
+ *          Phase 2 - Shivam Sehgal (ssehgal7@umd.edu) - Code designer,
+ *                    Patrik Pordi (ppordi@umd.edu) - Driver,
+ *                    Darshit Desai (darshit@umd.edu) - Navigator
+ * @brief Implementation of Robot class
  * @version 0.1
  * @date 2023-12-19
- *
- * @copyright Copyright (c) 2023
- *
+ * @copyright Copyright (c) 2023 Darshit Desai, Patrik Pordi, Shivam Sehgal
+ * This code is licensed under the MIT License. Please see the
+ * accompanying LICENSE file for the full text of the license.
  */
 #include "../include/shape_shifters/robot.hpp"
 
@@ -39,6 +45,7 @@ void robot::odom_callback(
 /**
  * @brief Implementation of the velocity calculation function
  * @return std::pair<double, double>
+ *
  */
 std::pair<double, double> robot::velocity_calculation() {
   // Define the proportional gain for linear and angular velocity
@@ -91,7 +98,8 @@ void robot::velocity_callback() {
 }
 /**
  * @brief Implementation of the setTarget function
- *
+ * @param x
+ * @param y
  */
 void robot::setTarget(double x, double y) {
   target.first = x;
@@ -100,12 +108,13 @@ void robot::setTarget(double x, double y) {
 
 /**
  * @brief Implementation of the get target function
- *
+ * @return std::pair<double, double>
  */
 std::pair<double, double> robot::getTarget() { return target; }
 /**
  * @brief Implementation of the setCurrentPosition function
- *
+ * @param x
+ * @param y
  */
 void robot::setCurrentPosition(double x, double y) {
   current_position.first = x;
@@ -114,7 +123,7 @@ void robot::setCurrentPosition(double x, double y) {
 
 /**
  * @brief Implementation of the get Heading Angle function
- *
+ * @return double
  */
 double robot::getHeadingAngle() { return headingAngle; }
 
@@ -126,7 +135,7 @@ void robot::setHeadingAngle(double angle) { headingAngle = angle; }
 
 /**
  * @brief Implementation of the get current position function
- *
+ * @return std::pair<double, double>
  */
 std::pair<double, double> robot::getCurrentPosition() {
   return current_position;

@@ -308,19 +308,25 @@ TEST_F(LeaderTest, coordinate_assignment_test) {
   exec->add_node(leader_node);
 
   // Assuming you have valid robot positions and formation points
-  std::vector<std::vector<double>> robot_positions = {{0.0, 0.0}, {1.0, 1.0}, {2.0, 2.0}};
-  std::vector<std::vector<double>> formation_points = {{5.0, 5.0}, {6.0, 6.0}, {7.0, 7.0}};
+  std::vector<std::vector<double>> robot_positions = {
+      {0.0, 0.0}, {1.0, 1.0}, {2.0, 2.0}};
+  std::vector<std::vector<double>> formation_points = {
+      {5.0, 5.0}, {6.0, 6.0}, {7.0, 7.0}};
 
-  // Set the robot positions (you may need to modify based on your actual robot structure)
-  for (size_t i = 0; i < robot_array.size() && i < robot_positions.size(); ++i) {
-    robot_array[i]->setCurrentPosition(robot_positions[i][0], robot_positions[i][1]);
+  // Set the robot positions (you may need to modify based on your actual robot
+  // structure)
+  for (size_t i = 0; i < robot_array.size() && i < robot_positions.size();
+       ++i) {
+    robot_array[i]->setCurrentPosition(robot_positions[i][0],
+                                       robot_positions[i][1]);
   }
 
   // Call the coordinate_assignment method
   leader_node->coordinate_assignment(robot_positions, formation_points);
 
   // Check if the target positions are correctly assigned to the robots
-  for (size_t i = 0; i < robot_array.size() && i < formation_points.size(); ++i) {
+  for (size_t i = 0; i < robot_array.size() && i < formation_points.size();
+       ++i) {
     auto target = robot_array[i]->getTarget();
     EXPECT_EQ(target.first, formation_points[i][0]);
     EXPECT_EQ(target.second, formation_points[i][1]);
@@ -348,6 +354,3 @@ TEST_F(LeaderTest, formation_switch_test) {
   // Check for invalid trajectory option
   ASSERT_THROW(leader_node->formation_switch(4), std::invalid_argument);
 }
-
-
-

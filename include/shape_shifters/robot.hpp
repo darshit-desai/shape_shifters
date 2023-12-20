@@ -1,11 +1,22 @@
 /**
  * @file robot.hpp
- * @author your name (you@domain.com)
- * @brief Header file for the robot class
+ *
+ * @author  Phase 1 - Shivam Sehgal (ssehgal7@umd.edu) - Driver,
+ *                    Patrik Pordi (ppordi@umd.edu) - Navigator,
+ *                    Darshit Desai (darshit@umd.edu) - Code designer
+ *          Phase 2 - Shivam Sehgal (ssehgal7@umd.edu) - Code designer,
+ *                    Patrik Pordi (ppordi@umd.edu) - Driver,
+ *                    Darshit Desai (darshit@umd.edu) - Navigator
+ * @brief Robot class
  * @version 0.1
  * @date 2023-12-19
  *
  * @copyright Copyright (c) 2023
+ *
+ *
+ * @copyright Copyright (c) 2023 Darshit Desai, Patrik Pordi, Shivam Sehgal
+ * This code is licensed under the MIT License. Please see the
+ * accompanying LICENSE file for the full text of the license.
  *
  */
 
@@ -29,6 +40,8 @@ class robot : public rclcpp::Node {
  public:
   /**
    * @brief Construct a new Walker object
+   * @param name
+   * @param node_name
    *
    */
   robot(std::string name, std::string node_name)
@@ -51,7 +64,7 @@ class robot : public rclcpp::Node {
   }
   /**
    * @brief Subscribe to the odom topic using callback function
-   *
+   * @param msg
    */
   void odom_callback(
       std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void>>> msg);
@@ -62,7 +75,8 @@ class robot : public rclcpp::Node {
   void velocity_callback();
   /**
    * @brief Setters for the target
-   *
+   * @param x
+   * @param y
    */
   void setTarget(double x, double y);
   /**
@@ -79,6 +93,8 @@ class robot : public rclcpp::Node {
   double get_goal_distance();
   /**
    * @brief Setter for the current position
+   * @param x
+   * @param y
    *
    */
   void setCurrentPosition(double x, double y);
@@ -90,6 +106,7 @@ class robot : public rclcpp::Node {
   std::pair<double, double> getCurrentPosition();
   /**
    * @brief Getter for the target
+   * @return std::pair<double, double>
    *
    */
   std::pair<double, double> getTarget();
