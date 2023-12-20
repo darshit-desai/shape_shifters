@@ -1,12 +1,16 @@
 # Project ShapeShifters
-![CICD Workflow status](https://github.com/shivamsehgal77/shape_shifters/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/shivamsehgal77/shape_shifters/branch/main/graph/badge.svg)](https://codecov.io/gh/shivamsehgal77/shape_shifters)
+![CICD Workflow status](https://github.com/shivamsehgal77/ShapeShifters/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/shivamsehgal77/ShapeShifters/branch/main/graph/badge.svg)](https://codecov.io/gh/shivamsehgal77/ShapeShifters)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
 
 ## Description
 The project demonstrates a swarm control algorithm on a group of turtlebot robots. The turtlebot swarm executes a shape formation of different shapes when seen from the top view autonomously based on user input. The swarm will follow a leader follower configuration.
 
 ## Phase-2 Progress:
-During phase to we implemented the design, created the simulation, since we followed API and TDD you can see our backlog for this sprint below.
+- General progress, accomplishments, problems encountered can be found on the following presentation:
+- Link to the [presentation](https://docs.google.com/presentation/d/1W6J0OQgDlOtNGRTyHkPeD6P_r9gWOQOXk3N45q3PqNw/edit#slide=id.g2a89b81276e_0_13)
+
+During the phase to we implemented the design, created the simulation, since we followed API and TDD you can see our backlog for this sprint below.
+
 
 | ID | Task                                     | Sprint | Estimated Time (hrs) |
 |----------|--------------------------------------------------------|----------|-----------------------|
@@ -62,9 +66,6 @@ Below are the screenshots of UML and the launch file:
 
 ![](screenshots/Phase2_Results/circle.png)
 
-
-General progress, accomplishments, problems encountered can be found on the following presentation:
-https://docs.google.com/presentation/d/1W6J0OQgDlOtNGRTyHkPeD6P_r9gWOQOXk3N45q3PqNw/edit#slide=id.g2a89b81276e_0_13
 
 
 ## Phase-1 Progress:
