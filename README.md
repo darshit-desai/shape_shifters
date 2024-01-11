@@ -9,7 +9,7 @@ The project demonstrates a swarm control algorithm on a group of turtlebot robot
 - General progress, accomplishments, problems encountered can be found on the following presentation:
 - Link to the [presentation](https://docs.google.com/presentation/d/1W6J0OQgDlOtNGRTyHkPeD6P_r9gWOQOXk3N45q3PqNw/edit#slide=id.g2a89b81276e_0_13)
 
-During the phase to we implemented the design, created the simulation, since we followed API and TDD you can see our backlog for this sprint below.
+During the phase to we implemented the design, created the simulation, since we followed AIP and TDD you can see our backlog for this sprint below.
 
 
 | ID | Task                                     | Sprint | Estimated Time (hrs) |
